@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hcjk.org/sitemap.xml
+
+# Heather Krystecki — Poet & Author
+# I See You, I See Me — Poetry Collection

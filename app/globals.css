@@ -1,0 +1,554 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #faf8f5;
+  color: #2a2a2a;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background-color: rgba(196, 167, 163, 0.3);
+  color: #2a2a2a;
+}
+
+/* ========================================
+   Loading Screen
+   ======================================== */
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #faf8f5;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.loading-screen.loaded {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-content {
+  text-align: center;
+}
+
+.loading-logo {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: #2a2a2a;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.loading-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #8a8580;
+  margin-bottom: 32px;
+  animation: fadeIn 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.loading-bar-track {
+  width: 120px;
+  height: 1px;
+  background: rgba(196, 167, 163, 0.2);
+  margin: 0 auto;
+  border-radius: 1px;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.loading-bar-fill {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(to right, #c4a7a3, #2a2a2a);
+  border-radius: 1px;
+  animation: loadingProgress 1.8s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+}
+
+@keyframes loadingProgress {
+  0% { width: 0; }
+  40% { width: 60%; }
+  80% { width: 85%; }
+  100% { width: 100%; }
+}
+
+/* ========================================
+   Premium Scrollbar
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #faf8f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4a7a3;
+  border-radius: 3px;
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes expandLine {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fadeUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fadeUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fadeUp 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.animate-fade-in-slow {
+  animation: fadeIn 2s ease-out forwards;
+}
+
+.animate-expand-line {
+  animation: expandLine 1s ease-out 0.6s forwards;
+}
+
+/* ========================================
+   Typography
+   ======================================== */
+
+.poetry-text {
+  line-height: 2;
+  letter-spacing: 0.02em;
+}
+
+/* ========================================
+   Dividers
+   ======================================== */
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c4a7a3, transparent);
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+
+.btn-primary {
+  display: inline-block;
+  padding: 16px 48px;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  border: 1px solid #2a2a2a;
+  color: #2a2a2a;
+  background: transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #2a2a2a;
+  color: #faf8f5;
+}
+
+.btn-secondary {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #2a2a2a;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.btn-secondary:hover {
+  opacity: 0.6;
+}
+
+.btn-outline {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 16px 48px;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  border: 1px solid rgba(138, 133, 128, 0.2);
+  color: #2a2a2a;
+  background: transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: #f5f0eb;
+}
+
+/* ========================================
+   Instagram Embed
+   ======================================== */
+
+.instagram-media {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+/* ========================================
+   Section Transitions
+   ======================================== */
+
+.section-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+   Blog Prose Content
+   ======================================== */
+
+.blog-content h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 300;
+  color: #2a2a2a;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  color: #2a2a2a;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-content p {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: #8a8580;
+  margin-bottom: 1.5rem;
+}
+
+.blog-content blockquote {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #2a2a2a;
+  border-left: 2px solid rgba(196, 167, 163, 0.4);
+  padding-left: 2rem;
+  margin: 2rem 0;
+  line-height: 2;
+}
+
+.blog-content a {
+  color: #2a2a2a;
+  border-bottom: 1px solid rgba(196, 167, 163, 0.4);
+  transition: border-color 0.3s ease;
+}
+
+.blog-content a:hover {
+  border-color: #c4a7a3;
+}
+
+.blog-content ul,
+.blog-content ol {
+  color: #8a8580;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.9;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-content hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c4a7a3, transparent);
+  margin: 3rem auto;
+  width: 60px;
+}
+
+.blog-content strong {
+  color: #2a2a2a;
+  font-weight: 500;
+}
+
+.blog-content em {
+  font-style: italic;
+}
+
+/* ========================================
+   Enhanced Button Hover Effects
+   ======================================== */
+
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background: #2a2a2a;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.btn-primary:hover::after {
+  width: 100%;
+}
+
+.btn-secondary {
+  position: relative;
+}
+
+.btn-secondary::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #c4a7a3;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-secondary:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ========================================
+   Decorative Floating Elements
+   ======================================== */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+/* ========================================
+   Image Hover Effects
+   ======================================== */
+
+.book-cover-hover {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.book-cover-hover:hover {
+  transform: translateY(-8px) rotateY(-3deg);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   Focus Styles for Accessibility
+   ======================================== */
+
+*:focus-visible {
+  outline: 2px solid #c4a7a3;
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #c4a7a3;
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Reduced Motion
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .loading-screen {
+    display: none !important;
+  }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+
+@media print {
+  header,
+  footer,
+  nav,
+  .loading-screen,
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline,
+  button,
+  [role="progressbar"] {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.8;
+  }
+
+  .poetry-text {
+    font-size: 14pt;
+    line-height: 2.2;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+
+  blockquote {
+    font-size: 14pt;
+    border: none !important;
+    padding: 0 !important;
+    margin: 2em auto !important;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+
+  .divider {
+    background: black !important;
+    height: 0.5px !important;
+    margin: 2em auto !important;
+  }
+
+  .font-serif {
+    font-family: Georgia, 'Times New Roman', serif !important;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666;
+  }
+
+  article {
+    page-break-after: always;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+
+  main::after {
+    content: "hcjk.org — Heather Krystecki";
+    display: block;
+    text-align: center;
+    font-size: 9pt;
+    color: #999;
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 0.5px solid #ccc;
+  }
+}
