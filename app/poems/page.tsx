@@ -5,7 +5,7 @@ import { PoemCard } from '@/components/poem-card'
 export const metadata: Metadata = {
   title: 'Poems',
   description:
-    'Read the poetry of Heather Krystecki. A curated archive of poems from I See You, I See Me and beyond — raw, emotional poetry about love, loss, and self-discovery.',
+    'Read the poetry of Heather Krystecki. Poems from I See You, I See Me — poetry about mental health, addiction, and the journey of recovery.',
   alternates: { canonical: 'https://hcjk.org/poems/' },
 }
 

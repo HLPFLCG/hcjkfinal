@@ -7,7 +7,7 @@ import { ShareButtons } from "@/components/share-buttons"
 export const metadata: Metadata = {
   title: 'Shop — Buy I See You, I See Me',
   description:
-    'Order I See You, I See Me by Heather Krystecki — a raw, emotional poetry collection about love, loss, healing, mental health, and self-discovery. Available on Barnes & Noble, Amazon, and direct from the author.',
+    'Order I See You, I See Me by Heather Krystecki — a poetry collection about mental health, addiction, and recovery. Available on Barnes & Noble and direct from the author.',
   alternates: { canonical: 'https://hcjk.org/shop/' },
 }
 
@@ -98,15 +98,17 @@ export default function ShopPage() {
 
             <div className="space-y-5 text-base leading-[1.9] text-stone">
               <p>
-                A poetry collection about the act of truly seeing&mdash;others,
-                ourselves, and the quiet revelations that emerge when we
-                let ourselves be known.
+                This book is a collection of the darkest parts of my mind throughout
+                my 20s. The ebbs and flows of my mental health journey and the journey
+                to coming back to myself again. The themes include addiction, withdrawal,
+                mental health, and recovery.
               </p>
               <p>
-                These poems move through love, solitude, healing, and the
-                small sacred moments that make up a life. They are written
-                for anyone who has ever felt the weight of being understood&mdash;
-                and the freedom that comes with it.
+                By sharing this I can release the feelings this journey brought up to
+                move on into my future. I hope this collection of poems shows others
+                that they aren&apos;t alone. There&apos;s still a stigma regarding mental health.
+                It&apos;s hard for people to recognize what they cannot see, and mental health
+                cannot always be seen. I see you and I believe in you.
               </p>
             </div>
 
@@ -133,14 +135,6 @@ export default function ShopPage() {
                 className="btn-outline"
               >
                 Buy on Barnes &amp; Noble
-              </a>
-
-              <a
-                href="#"
-                className="btn-outline"
-                aria-label="Buy on Amazon (coming soon)"
-              >
-                Buy on Amazon
               </a>
 
               <p className="text-xs text-stone/40 text-center mt-4 italic">
@@ -186,7 +180,7 @@ export default function ShopPage() {
               <ShareButtons
                 title="I See You, I See Me — by Heather Krystecki"
                 url="/shop/"
-                text="A raw, emotional poetry collection about love, loss, and the quiet courage of being truly seen."
+                text="A poetry collection about mental health, addiction, and recovery. I see you and I believe in you."
               />
             </div>
           </div>
@@ -216,6 +210,79 @@ export default function ShopPage() {
         </ScrollReveal>
       </section>
 
+      {/* Available Worldwide */}
+      <section className="py-30 md:py-40 px-8">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-8">
+              Distributed by IngramSpark
+            </p>
+            <h2 className="font-serif text-display-sm text-charcoal font-light mb-6">
+              Available Worldwide
+            </h2>
+            <p className="text-base text-stone leading-relaxed mb-16 max-w-prose-narrow mx-auto">
+              Distributed through IngramSpark&apos;s global network, <em className="font-serif italic">I See You, I See Me</em> can
+              be ordered from bookstores and online retailers across the globe.
+            </p>
+
+            {/* World Map - SVG */}
+            <div className="relative max-w-3xl mx-auto mb-16">
+              <svg viewBox="0 0 1000 500" className="w-full h-auto" aria-label="World map showing book availability">
+                {/* Simplified world map paths - major continents highlighted */}
+                <defs>
+                  <linearGradient id="mapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#c4a7a3" stopOpacity="0.3" />
+                    <stop offset="100%" stopColor="#c4a7a3" stopOpacity="0.15" />
+                  </linearGradient>
+                </defs>
+                {/* North America */}
+                <path d="M 120 80 Q 150 60 200 70 L 260 90 Q 280 120 270 160 L 250 200 Q 230 220 200 230 L 170 220 Q 140 200 130 170 L 120 130 Z" fill="url(#mapGrad)" stroke="#c4a7a3" strokeWidth="1" />
+                {/* South America */}
+                <path d="M 220 260 Q 240 250 260 260 L 280 300 Q 290 340 280 380 L 260 420 Q 240 440 230 420 L 210 360 Q 200 320 210 290 Z" fill="url(#mapGrad)" stroke="#c4a7a3" strokeWidth="1" />
+                {/* Europe */}
+                <path d="M 440 80 Q 470 70 510 80 L 530 100 Q 540 120 530 140 L 510 150 Q 480 160 460 150 L 440 130 Q 430 110 440 90 Z" fill="url(#mapGrad)" stroke="#c4a7a3" strokeWidth="1" />
+                {/* Africa */}
+                <path d="M 470 180 Q 500 170 530 180 L 540 220 Q 550 270 540 320 L 520 370 Q 500 390 490 370 L 470 310 Q 460 260 465 220 Z" fill="url(#mapGrad)" stroke="#c4a7a3" strokeWidth="1" />
+                {/* Asia */}
+                <path d="M 560 70 Q 620 50 700 60 L 770 80 Q 810 100 800 140 L 760 180 Q 720 200 670 190 L 620 170 Q 580 150 560 120 Z" fill="url(#mapGrad)" stroke="#c4a7a3" strokeWidth="1" />
+                {/* Australia */}
+                <path d="M 760 320 Q 790 310 830 320 L 860 340 Q 870 360 860 380 L 830 390 Q 800 400 780 380 L 760 360 Q 750 340 760 320 Z" fill="url(#mapGrad)" stroke="#c4a7a3" strokeWidth="1" />
+
+                {/* Highlight dots for key distribution countries */}
+                <circle cx="190" cy="140" r="6" fill="#c4a7a3" opacity="0.9"><title>United States</title></circle>
+                <circle cx="160" cy="120" r="4" fill="#c4a7a3" opacity="0.7"><title>Canada</title></circle>
+                <circle cx="480" cy="110" r="5" fill="#c4a7a3" opacity="0.8"><title>United Kingdom</title></circle>
+                <circle cx="510" cy="120" r="4" fill="#c4a7a3" opacity="0.7"><title>Germany</title></circle>
+                <circle cx="460" cy="130" r="4" fill="#c4a7a3" opacity="0.7"><title>France</title></circle>
+                <circle cx="530" cy="115" r="3" fill="#c4a7a3" opacity="0.6"><title>Poland</title></circle>
+                <circle cx="810" cy="350" r="5" fill="#c4a7a3" opacity="0.8"><title>Australia</title></circle>
+                <circle cx="860" cy="360" r="3" fill="#c4a7a3" opacity="0.6"><title>New Zealand</title></circle>
+                <circle cx="680" cy="160" r="4" fill="#c4a7a3" opacity="0.7"><title>India</title></circle>
+                <circle cx="240" cy="280" r="4" fill="#c4a7a3" opacity="0.7"><title>Brazil</title></circle>
+                <circle cx="500" cy="220" r="3" fill="#c4a7a3" opacity="0.6"><title>South Africa</title></circle>
+                <circle cx="760" cy="130" r="4" fill="#c4a7a3" opacity="0.7"><title>Japan</title></circle>
+              </svg>
+            </div>
+
+            {/* Country Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+              {[
+                'United States', 'Canada', 'United Kingdom', 'Australia',
+                'Germany', 'France', 'India', 'Brazil',
+                'Japan', 'South Africa', 'New Zealand', 'Poland',
+              ].map((country) => (
+                <div key={country} className="text-center py-3 px-4 border border-stone/10 rounded">
+                  <p className="text-sm text-charcoal">{country}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-stone/40 mt-8 italic">
+              And 30+ additional countries through IngramSpark&apos;s global distribution network
+            </p>
+          </div>
+        </ScrollReveal>
+      </section>
+
       {/* Featured Poem */}
       <section className="py-30 md:py-40 px-8">
         <ScrollReveal>
@@ -224,15 +291,13 @@ export default function ShopPage() {
               A Poem from the Collection
             </p>
             <blockquote className="font-serif text-2xl md:text-3xl text-charcoal font-light italic leading-relaxed poetry-text">
-              you asked me
+              baby steps
               <br />
-              what i was looking for
+              one foot forward
               <br />
-              and i said&mdash;someone
+              then the other&mdash;
               <br />
-              who makes the silence
-              <br />
-              feel like enough
+              some days that&apos;s enough
             </blockquote>
             <div className="divider mx-auto mt-12" />
           </div>
@@ -253,22 +318,22 @@ export default function ShopPage() {
               <div className="space-y-4">
                 <div className="w-8 h-px bg-blush" />
                 <p className="text-base text-stone leading-relaxed">
-                  For anyone who has loved quietly and deeply&mdash;who knows that
-                  the most powerful moments often happen in silence.
+                  For anyone who has struggled with mental health&mdash;who knows
+                  the weight of carrying something invisible and wants to feel seen.
                 </p>
               </div>
               <div className="space-y-4">
                 <div className="w-8 h-px bg-blush" />
                 <p className="text-base text-stone leading-relaxed">
-                  For those on a journey of self-discovery&mdash;who are learning
-                  that seeing yourself clearly is the bravest thing you can do.
+                  For those on a journey of recovery&mdash;who are finding their
+                  way back to themselves and need to know they aren&apos;t alone.
                 </p>
               </div>
               <div className="space-y-4">
                 <div className="w-8 h-px bg-blush" />
                 <p className="text-base text-stone leading-relaxed">
-                  For readers who believe that poetry should feel like a
-                  conversation&mdash;intimate, honest, and true.
+                  For readers who believe poetry can heal&mdash;that raw, honest
+                  words have the power to break stigma and build connection.
                 </p>
               </div>
             </div>
@@ -329,7 +394,7 @@ export default function ShopPage() {
             Begin the journey
           </p>
           <p className="text-sm text-cream/50 mb-10">
-            Available worldwide on Barnes &amp; Noble, Amazon, and direct from the author
+            Available worldwide on Barnes &amp; Noble and direct from the author
           </p>
           <a
             href="https://www.barnesandnoble.com/w/i-see-you-i-see-me-heather-krystecki/1149164117"
