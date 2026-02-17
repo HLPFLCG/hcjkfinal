@@ -1,5 +1,4 @@
 import type { MetadataRoute } from 'next'
-import { getAllBlogPosts } from '@/lib/blog'
 import { getAllPoems } from '@/lib/poems'
 
 export const dynamic = 'force-static'
@@ -33,18 +32,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/blog/`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/events/`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
       url: `${baseUrl}/book-club/`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -58,13 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  const blogPosts = getAllBlogPosts().map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}/`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
-
   const poems = getAllPoems().map((poem) => ({
     url: `${baseUrl}/poems/${poem.slug}/`,
     lastModified: new Date(),
@@ -72,5 +52,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...staticPages, ...blogPosts, ...poems]
+  return [...staticPages, ...poems]
 }

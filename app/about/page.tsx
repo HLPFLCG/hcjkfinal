@@ -4,7 +4,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Meet Heather Krystecki — poet, author, and voice behind I See You, I See Me. Her raw, emotional poetry explores self-discovery, mental health, and the quiet courage of human connection.',
+    'Meet Heather Krystecki — poet, author, and mental health advocate. Her debut collection I See You, I See Me explores addiction, recovery, and the journey back to yourself.',
   alternates: { canonical: 'https://hcjk.org/about/' },
 }
 
@@ -27,20 +27,18 @@ export default function AboutPage() {
       {/* Bio */}
       <section className="pb-30 px-8">
         <div className="max-w-5xl mx-auto grid md:grid-cols-5 gap-16 md:gap-20">
-          {/* Sidebar */}
+          {/* Sidebar - Author Photo */}
           <div className="md:col-span-2 relative">
             <div className="sticky top-32">
               <div className="aspect-[3/4] bg-linen relative overflow-hidden mb-8">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center px-10">
-                    <p className="font-serif text-3xl font-light text-charcoal/15 leading-tight italic">
-                      &ldquo;poetry lives
-                      <br />
-                      in the everyday&rdquo;
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute inset-4 border border-blush/15" />
+                <img
+                  src="/images/heather-thailand.jpeg"
+                  alt="Heather Krystecki in Thailand"
+                  className="w-full h-full object-cover"
+                  width={400}
+                  height={533}
+                />
+                <div className="absolute inset-4 border border-cream/20" />
               </div>
               <div className="text-center">
                 <a
@@ -59,24 +57,28 @@ export default function AboutPage() {
           <div className="md:col-span-3">
             <div className="space-y-8 text-base leading-[1.9] text-stone">
               <p className="text-lg text-charcoal leading-[1.9] first-letter:font-serif first-letter:text-5xl first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-charcoal first-letter:font-light">
-                Heather Krystecki is a poet and writer whose work explores the intimate
-                geography of human connection&mdash;the moments of recognition, vulnerability,
-                and quiet understanding that define our deepest relationships.
+                Heather Krystecki is a poet and author whose debut collection,
+                <em className="font-serif italic"> I See You, I See Me</em>,
+                is a raw and unflinching look at her mental health journey through
+                her 20s&mdash;the darkness, the addiction, the withdrawal, and
+                ultimately, the recovery.
               </p>
 
               <p>
-                Her debut poetry collection, <em className="font-serif text-charcoal italic">I See You, I See Me</em>,
-                is a meditation on seeing and being seen. Through spare, honest language,
-                she traces the contours of love, loss, self-discovery, and the courage
-                it takes to be truly known by another person.
+                This book is a collection of the darkest parts of her mind&mdash;the
+                ebbs and flows of a mental health journey and the fight to come back
+                to herself again. The themes include addiction, withdrawal, mental
+                health, and recovery. By sharing these experiences, Heather hopes to
+                release the feelings this journey brought up and show others that
+                they aren&apos;t alone.
               </p>
 
               <p>
-                Heather&apos;s writing is rooted in the belief that the most profound truths
-                live in the simplest moments&mdash;in the pauses between conversations,
-                in the way light falls across a room, in the space between two people
-                sitting quietly together. Her poems don&apos;t ask to be loud. They ask
-                to be felt.
+                There&apos;s still a stigma regarding mental health. It&apos;s hard for
+                people to recognize what they cannot see, and mental health cannot
+                always be seen. Heather believes in breaking that stigma through
+                honesty and vulnerability&mdash;through putting the words on the
+                page that so many are afraid to say out loud.
               </p>
 
               <div className="py-8">
@@ -96,17 +98,24 @@ export default function AboutPage() {
               </div>
 
               <p>
-                She shares her poetry on Instagram, where her words have found a home
-                with readers who see their own stories reflected in her verses. Each
-                poem is an invitation&mdash;to pause, to feel, to recognize ourselves
-                in someone else&apos;s truth.
+                She shares her poetry on Instagram, where her words have found a
+                home with readers who see their own stories reflected in her verses.
+                Each poem is an invitation&mdash;to pause, to feel, to recognize
+                that recovery is not linear and that asking for help is not weakness.
               </p>
 
               <p>
-                When she&apos;s not writing, Heather finds inspiration in the quiet
-                rhythms of everyday life&mdash;the conversations that linger, the
-                moments that catch you off guard, and the kind of love that doesn&apos;t
-                need to announce itself.
+                The butterfly on the cover of the book was hand-painted by Heather
+                herself&mdash;a symbol of transformation, of emerging from the darkest
+                places and finding beauty on the other side. Every part of this book
+                is deeply personal, from the words to the artwork.
+              </p>
+
+              <p>
+                When she&apos;s not writing, Heather finds inspiration in travel and
+                new experiences&mdash;the kind of moments that remind you the world
+                is bigger than your pain and that there is always something worth
+                coming back to.
               </p>
             </div>
 
@@ -120,16 +129,16 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-6 text-base leading-[1.9] text-stone">
                 <p>
-                  Poetry, for Heather, is an act of translation&mdash;taking the
-                  things we feel but cannot say and giving them a form that others
-                  can hold. It&apos;s the bridge between the internal and the shared,
-                  between solitude and belonging.
+                  Poetry, for Heather, is an act of survival&mdash;taking the things
+                  we carry silently and giving them a form that others can recognize
+                  in themselves. It&apos;s the bridge between isolation and connection,
+                  between suffering alone and knowing someone else understands.
                 </p>
                 <p>
-                  Her work resists the pressure to be performative. Instead, she
-                  writes toward honesty&mdash;the kind of honesty that feels like a
-                  deep breath, like the first moment of understanding after a long
-                  silence.
+                  Her work doesn&apos;t try to be polished or performative. It&apos;s raw,
+                  honest, and real&mdash;the kind of honesty that comes from having
+                  lived through something and deciding to share it so that others
+                  don&apos;t have to face it alone.
                 </p>
               </div>
             </div>
@@ -155,7 +164,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Press */}
+            {/* As Seen In */}
             <div className="mt-20 pt-16 border-t border-stone/10">
               <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-8">
                 Press & Media
@@ -173,14 +182,15 @@ export default function AboutPage() {
                 </Link>.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-                <div className="h-16 bg-linen flex items-center justify-center">
-                  <p className="text-xs text-stone/30 italic">Coming soon</p>
+                <div className="h-20 border border-stone/10 rounded flex flex-col items-center justify-center">
+                  <p className="font-serif text-xl text-charcoal font-light italic">The River</p>
+                  <p className="text-[9px] tracking-super-wide uppercase text-stone/40 mt-1">Published Poet</p>
                 </div>
-                <div className="h-16 bg-linen flex items-center justify-center">
-                  <p className="text-xs text-stone/30 italic">Coming soon</p>
+                <div className="h-20 bg-linen flex items-center justify-center">
+                  <p className="text-xs text-stone/30 italic">More coming soon</p>
                 </div>
-                <div className="h-16 bg-linen flex items-center justify-center">
-                  <p className="text-xs text-stone/30 italic">Coming soon</p>
+                <div className="h-20 bg-linen flex items-center justify-center">
+                  <p className="text-xs text-stone/30 italic">More coming soon</p>
                 </div>
               </div>
             </div>

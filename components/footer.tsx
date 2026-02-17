@@ -12,7 +12,7 @@ export default function Footer() {
               Heather Krystecki
             </p>
             <p className="text-sm text-cream/50 leading-relaxed max-w-xs">
-              Poet, author, and believer in the beauty of quiet moments.
+              Poet, author, and advocate for mental health awareness.
             </p>
           </div>
 
@@ -26,9 +26,7 @@ export default function Footer() {
                 { href: "/", label: "Home" },
                 { href: "/about", label: "About" },
                 { href: "/poems", label: "Poems" },
-                { href: "/blog", label: "Journal" },
                 { href: "/shop", label: "Shop" },
-                { href: "/events", label: "Events" },
                 { href: "/book-club", label: "Book Club Guide" },
                 { href: "/contact", label: "Contact" },
               ].map((link) => (

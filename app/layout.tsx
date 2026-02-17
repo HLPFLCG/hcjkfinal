@@ -10,18 +10,18 @@ import { SEO_KEYWORDS } from "@/lib/metadata"
 export const metadata: Metadata = {
   metadataBase: new URL('https://hcjk.org'),
   title: {
-    default: 'Heather Krystecki — Poet & Author | Raw, Emotional Poetry',
+    default: 'Heather Krystecki — Poet & Author | Mental Health, Addiction & Recovery',
     template: '%s | Heather Krystecki',
   },
   description:
-    'Raw, emotional poetry about love, loss, self-discovery, and mental health by Heather Krystecki. Read poems from I See You, I See Me — a modern poetry collection about the courage of being truly seen.',
+    'Poetry about mental health, addiction, and recovery by Heather Krystecki. Read poems from I See You, I See Me — a collection about the darkest parts of the journey and the fight to come back.',
   keywords: SEO_KEYWORDS,
   authors: [{ name: 'Heather Krystecki', url: 'https://hcjk.org' }],
   creator: 'Heather Krystecki',
   openGraph: {
     title: 'Heather Krystecki — Poet & Author',
     description:
-      'I See You, I See Me — raw, emotional poetry about love, loss, self-discovery, and mental health. A modern poetry collection by Heather Krystecki.',
+      'I See You, I See Me — poetry about mental health, addiction, and recovery. A collection by Heather Krystecki.',
     url: 'https://hcjk.org',
     siteName: 'Heather Krystecki',
     locale: 'en_US',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Heather Krystecki — Poet & Author',
     description:
-      'I See You, I See Me — raw, emotional poetry about love, loss, self-discovery, and mental health.',
+      'I See You, I See Me — poetry about mental health, addiction, and recovery by Heather Krystecki.',
     creator: '@hcjk_collection',
   },
   alternates: {

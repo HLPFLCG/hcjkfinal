@@ -18,7 +18,7 @@ export function getPersonSchema() {
     email: EMAIL,
     jobTitle: 'Poet & Author',
     description:
-      'Poet and author of I See You, I See Me — exploring love, loss, self-discovery, and the quiet courage of being truly seen.',
+      'Poet and author of I See You, I See Me — a collection exploring mental health, addiction, and recovery.',
   }
 }
 
@@ -34,7 +34,7 @@ export function getBookSchema() {
     isbn: ISBN,
     image: `${SITE_URL}/images/book-cover-front.jpg`,
     bookFormat: 'https://schema.org/Paperback',
-    genre: ['Poetry', 'Mental Health', 'Self-Discovery'],
+    genre: ['Poetry', 'Mental Health', 'Addiction & Recovery'],
     url: `${SITE_URL}/shop/`,
     offers: {
       '@type': 'Offer',
@@ -42,7 +42,7 @@ export function getBookSchema() {
       url: BN_URL,
     },
     description:
-      'A poetry collection about the act of truly seeing — others, ourselves, and the quiet revelations that emerge when we let ourselves be known. Raw, emotional poetry about love, loss, healing, and mental health.',
+      'A poetry collection about mental health crises, addiction, and recovery. The darkest parts of the journey and the fight to come back.',
   }
 }
 
@@ -53,7 +53,7 @@ export function getWebsiteSchema() {
     name: 'Heather Krystecki — Poet & Author',
     url: SITE_URL,
     description:
-      'Official website of poet Heather Krystecki, author of I See You, I See Me. Raw, emotional poetry about love, loss, self-discovery, and mental health.',
+      'Official website of poet Heather Krystecki, author of I See You, I See Me. Poetry about mental health, addiction, and recovery.',
     author: {
       '@type': 'Person',
       name: AUTHOR_NAME,

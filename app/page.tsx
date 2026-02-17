@@ -3,19 +3,15 @@ import type { Metadata } from "next"
 import { InstagramEmbed } from "@/components/instagram-embed"
 import { NewsletterSignup } from "@/components/newsletter-signup"
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { getFeaturedBlogPosts } from "@/lib/blog"
-import { BlogCard } from "@/components/blog-card"
 
 export const metadata: Metadata = {
-  title: 'Heather Krystecki — Raw Poetry About Love, Loss & Self-Discovery',
+  title: 'Heather Krystecki — Poetry About Mental Health, Addiction & Recovery',
   description:
-    'Discover the emotional, healing poetry of Heather Krystecki. Read poems from I See You, I See Me — a modern poetry collection exploring mental health, love, and the courage of being truly seen.',
+    'Discover the poetry of Heather Krystecki. Read poems from I See You, I See Me — a collection exploring mental health crises, addiction, and the journey of recovery.',
   alternates: { canonical: 'https://hcjk.org/' },
 }
 
 export default function Home() {
-  const recentPosts = getFeaturedBlogPosts(2)
-
   return (
     <article>
       {/* Hero - Full viewport cinematic intro */}
@@ -44,7 +40,7 @@ export default function Home() {
         </div>
 
         <p className="font-serif text-xl md:text-2xl text-stone font-light italic max-w-md animate-fade-up-delay-2">
-          A journey through love, loss, and the quiet courage of being truly seen.
+          A journey through mental health crises, addiction, and recovery.
         </p>
 
         <div className="animate-fade-up-delay-3 mt-14">
@@ -63,7 +59,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Poem */}
+      {/* Featured Poem - Baby Steps */}
       <section className="py-30 md:py-40 px-8 bg-linen relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-transparent to-blush/20" />
         <ScrollReveal>
@@ -72,14 +68,17 @@ export default function Home() {
               From the Collection
             </p>
             <blockquote className="font-serif text-2xl md:text-3xl text-charcoal font-light italic leading-relaxed poetry-text">
-              in the quiet between us
+              baby steps
               <br />
-              i found the words
+              one foot forward
               <br />
-              i had been searching for&mdash;
+              then the other&mdash;
               <br />
-              the ones that sound like home
+              some days that&apos;s enough
             </blockquote>
+            <p className="text-[10px] tracking-super-wide uppercase text-stone/40 mt-8">
+              &mdash; &ldquo;Baby Steps&rdquo;
+            </p>
             <div className="divider mx-auto mt-12" />
           </div>
         </ScrollReveal>
@@ -91,18 +90,14 @@ export default function Home() {
           <ScrollReveal direction="left">
             <div className="relative">
               <div className="aspect-[3/4] bg-linen relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center px-12">
-                    <p className="font-serif text-4xl md:text-5xl font-light text-charcoal/10 leading-tight italic">
-                      &ldquo;some things
-                      <br />
-                      are too true
-                      <br />
-                      to say out loud&rdquo;
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute inset-4 border border-blush/20" />
+                <img
+                  src="/images/heather-thailand.jpeg"
+                  alt="Heather Krystecki in Thailand"
+                  className="w-full h-full object-cover"
+                  width={400}
+                  height={533}
+                />
+                <div className="absolute inset-4 border border-cream/20" />
               </div>
             </div>
           </ScrollReveal>
@@ -116,14 +111,14 @@ export default function Home() {
                 Heather Krystecki
               </h2>
               <p className="text-base text-stone leading-relaxed mb-6">
-                Heather writes about the spaces between people&mdash;the tender,
-                unspoken moments where we truly see one another. Her raw, emotional
-                poetry traces the contours of love, vulnerability, mental health,
-                and the quiet revelations that emerge when we let ourselves be known.
+                Heather is a poet and author whose debut collection explores the
+                raw realities of mental health, addiction, and recovery. Her writing
+                captures the darkest and most honest parts of her journey through
+                her 20s&mdash;and the fight to come back to herself.
               </p>
               <p className="text-base text-stone leading-relaxed mb-10">
-                Through spare, honest language, she invites readers into the
-                intimate geography of human connection and self-discovery.
+                She believes that sharing these experiences openly can break the
+                stigma around mental health and show others they aren&apos;t alone.
               </p>
               <Link href="/about" className="btn-secondary">
                 Read Her Story
@@ -160,13 +155,13 @@ export default function Home() {
                 Now Available Worldwide
               </h2>
               <p className="text-base text-cream/60 leading-relaxed mb-6">
-                A poetry collection about the act of truly seeing&mdash;others,
-                ourselves, and the quiet revelations that emerge when we
-                let ourselves be known.
+                This book is a collection of the darkest parts of my mind throughout
+                my 20s. The themes include addiction, withdrawal, mental health,
+                and recovery.
               </p>
               <p className="text-base text-cream/60 leading-relaxed mb-10">
-                These poems move through love, solitude, healing, and the
-                small sacred moments that make up a life.
+                I hope this collection shows others that they aren&apos;t alone.
+                I see you and I believe in you.
               </p>
               <div className="flex flex-col sm:flex-row items-start gap-4">
                 <Link
@@ -176,7 +171,7 @@ export default function Home() {
                   Get Your Copy
                 </Link>
                 <span className="text-[10px] tracking-wide text-cream/30 self-center">
-                  Barnes &amp; Noble &middot; Amazon &middot; Direct
+                  Barnes &amp; Noble &middot; Direct
                 </span>
               </div>
             </div>
@@ -184,25 +179,94 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Second Poem */}
+      {/* Hand-Painted Butterfly Cover Art */}
       <section className="py-30 md:py-40 px-8">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+          <ScrollReveal direction="right" delay={200}>
+            <div>
+              <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-8">
+                The Cover Art
+              </p>
+              <h2 className="font-serif text-display-sm text-charcoal font-light mb-8">
+                Hand-Painted by the Author
+              </h2>
+              <p className="text-base text-stone leading-relaxed mb-6">
+                The butterfly on the cover of <em className="font-serif italic">I See You, I See Me</em> was
+                hand-painted by Heather herself. It represents transformation&mdash;the
+                metamorphosis that comes from facing your darkest moments and emerging
+                on the other side.
+              </p>
+              <p className="text-base text-stone leading-relaxed mb-6">
+                Every detail of this book is personal. From the poems to the
+                artwork, it was created with the intention of being completely
+                authentic and real&mdash;just like the journey it represents.
+              </p>
+              <p className="text-base text-stone leading-relaxed">
+                The butterfly symbolizes the beauty that can come from struggle,
+                the strength found in vulnerability, and the possibility of
+                starting over.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="relative flex items-center justify-center">
+              <div className="relative">
+                <div className="absolute -bottom-4 left-4 right-4 h-8 bg-charcoal/5 blur-xl" />
+                <img
+                  src="/images/Image.jpeg"
+                  alt="Hand-painted butterfly artwork on the cover of I See You, I See Me"
+                  className="w-64 md:w-72 shadow-xl book-cover-hover"
+                  width={288}
+                  height={432}
+                />
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Second Poem - Functional */}
+      <section className="py-30 md:py-40 px-8 bg-linen">
         <ScrollReveal>
           <div className="max-w-prose-narrow mx-auto text-center">
             <blockquote className="font-serif text-2xl md:text-3xl text-charcoal font-light italic leading-relaxed poetry-text">
-              you asked me
+              i learned to call it
               <br />
-              what i was looking for
+              functional&mdash;
               <br />
-              and i said&mdash;someone
+              as if surviving
               <br />
-              who makes the silence
+              and living
               <br />
-              feel like enough
+              were the same thing
             </blockquote>
             <div className="divider mx-auto mt-12 mb-8" />
             <p className="text-[10px] tracking-super-wide uppercase text-stone/50">
-              From &ldquo;I See You, I See Me&rdquo;
+              &mdash; &ldquo;Functional&rdquo; from <em className="font-serif normal-case text-xs text-stone/40">I See You, I See Me</em>
             </p>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* As Seen In */}
+      <section className="py-26 md:py-30 px-8">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-12">
+              As Seen In
+            </p>
+            <div className="flex items-center justify-center gap-12 md:gap-20">
+              <div className="text-center">
+                <p className="font-serif text-2xl md:text-3xl text-charcoal font-light italic">
+                  The River
+                </p>
+                <p className="text-[10px] tracking-super-wide uppercase text-stone/40 mt-2">
+                  Published Poet
+                </p>
+              </div>
+            </div>
+            <div className="divider mx-auto mt-12" />
           </div>
         </ScrollReveal>
       </section>
@@ -217,7 +281,7 @@ export default function Home() {
             Read the poems
           </h2>
           <p className="text-base text-stone leading-relaxed mb-10 max-w-prose-narrow mx-auto">
-            Explore a growing collection of poems — from the pages of the book and beyond.
+            Explore poems from the collection&mdash;raw, honest words about addiction, mental health, and finding yourself again.
           </p>
           <Link href="/poems" className="btn-primary">
             Browse Poems
@@ -225,31 +289,26 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* Latest from the Journal */}
-      {recentPosts.length > 0 && (
-        <section className="py-26 md:py-30 px-8">
-          <ScrollReveal>
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-8">
-                From the Journal
-              </p>
-              <h2 className="font-serif text-display-sm text-charcoal font-light mb-16">
-                Recent reflections
-              </h2>
-              <div className="grid md:grid-cols-2 gap-16 text-left">
-                {recentPosts.map((post) => (
-                  <BlogCard key={post.slug} post={post} />
-                ))}
-              </div>
-              <div className="mt-16">
-                <Link href="/blog" className="btn-secondary">
-                  Read the Journal
-                </Link>
-              </div>
-            </div>
-          </ScrollReveal>
-        </section>
-      )}
+      {/* Third Poem - Sunrise */}
+      <section className="py-30 md:py-40 px-8">
+        <ScrollReveal>
+          <div className="max-w-prose-narrow mx-auto text-center">
+            <blockquote className="font-serif text-2xl md:text-3xl text-charcoal font-light italic leading-relaxed poetry-text">
+              the sunrise doesn&apos;t ask
+              <br />
+              if you&apos;re ready&mdash;
+              <br />
+              it just comes
+              <br />
+              and so does healing
+            </blockquote>
+            <div className="divider mx-auto mt-12 mb-8" />
+            <p className="text-[10px] tracking-super-wide uppercase text-stone/50">
+              &mdash; &ldquo;Sunrise&rdquo; from <em className="font-serif normal-case text-xs text-stone/40">I See You, I See Me</em>
+            </p>
+          </div>
+        </ScrollReveal>
+      </section>
 
       {/* Instagram Feed */}
       <section className="py-26 md:py-30 px-8 bg-linen">
@@ -312,7 +371,7 @@ export default function Home() {
         <ScrollReveal>
           <div className="max-w-prose-narrow mx-auto">
             <p className="font-serif text-display text-charcoal font-light mb-6">
-              Let the words find you.
+              I see you and I believe in you.
             </p>
             <div className="divider mx-auto mb-10" />
             <Link href="/shop" className="btn-secondary">
