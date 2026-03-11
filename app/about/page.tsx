@@ -32,11 +32,13 @@ export default function AboutPage() {
             <div className="sticky top-32">
               <div className="aspect-[3/4] bg-linen relative overflow-hidden mb-8">
                 <img
-                  src="/images/heather-thailand.jpeg"
+                  src="/images/heather-krystecki.webp"
                   alt="Heather Krystecki in Thailand"
                   className="w-full h-full object-cover"
                   width={400}
                   height={533}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-4 border border-cream/20" />
               </div>

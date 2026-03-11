@@ -92,11 +92,13 @@ export default function Home() {
             <div className="relative">
               <div className="aspect-[3/4] bg-linen relative overflow-hidden">
                 <img
-                  src="/images/heather-thailand.jpeg"
+                  src="/images/heather-krystecki.webp"
                   alt="Heather Krystecki in Thailand"
                   className="w-full h-full object-cover"
                   width={400}
                   height={533}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-4 border border-cream/20" />
               </div>
@@ -137,11 +139,13 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute -bottom-4 left-4 right-4 h-8 bg-black/20 blur-xl" />
                 <img
-                  src="/images/Image.jpeg"
+                  src="/images/front-cover.webp"
                   alt="I See You, I See Me by Heather Krystecki — front cover"
                   className="w-64 md:w-72 shadow-2xl book-cover-hover"
                   width={288}
                   height={432}
+                  fetchPriority="high"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -223,11 +227,13 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute -bottom-4 left-4 right-4 h-8 bg-charcoal/5 blur-xl" />
                 <img
-                  src="/images/Image.jpeg"
+                  src="/images/front-cover.webp"
                   alt="Hand-painted butterfly artwork on the cover of I See You, I See Me"
                   className="w-64 md:w-72 shadow-xl book-cover-hover"
                   width={288}
                   height={432}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
