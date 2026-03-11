@@ -3,12 +3,18 @@ import type { Metadata } from "next"
 import { getBookSchema } from "@/lib/structured-data"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { ShareButtons } from "@/components/share-buttons"
+import { AMAZON_URL, BN_URL } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: 'Shop — Buy I See You, I See Me',
   description:
-    'Order I See You, I See Me by Heather Krystecki — a poetry collection about mental health, addiction, and recovery. Available on Barnes & Noble and direct from the author.',
+    'Order I See You, I See Me by Heather Krystecki — a poetry collection about mental health, addiction, and recovery. Available on Amazon, Barnes & Noble, and direct from the author.',
   alternates: { canonical: 'https://hcjk.org/shop/' },
+  openGraph: {
+    title: 'Shop — I See You, I See Me by Heather Krystecki',
+    description: 'A raw, honest poetry collection about mental health, addiction, and the journey back to yourself. Order on Amazon, Barnes & Noble, or direct.',
+    images: [{ url: 'https://hcjk.org/images/Image.jpeg', width: 400, height: 600, alt: 'I See You, I See Me — book cover' }],
+  },
 }
 
 const praise = [
@@ -47,7 +53,7 @@ export default function ShopPage() {
         <div className="divider mx-auto mt-10 animate-fade-up-delay-2" />
       </section>
 
-      {/* Book Feature - Front Cover */}
+      {/* Book Feature */}
       <section className="pb-30 px-8">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
           {/* Book Covers */}
@@ -96,6 +102,18 @@ export default function ShopPage() {
 
             <div className="w-12 h-px bg-blush/40" />
 
+            {/* Star Rating */}
+            <div className="flex items-center gap-3">
+              <div className="flex gap-1" aria-label="5 star rating">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-4 h-4 text-blush fill-current" viewBox="0 0 20 20" aria-hidden="true">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-sm text-stone/60 italic font-serif">"Made me feel less alone"</p>
+            </div>
+
             <div className="space-y-5 text-base leading-[1.9] text-stone">
               <p>
                 This book is a collection of the darkest parts of my mind throughout
@@ -120,19 +138,32 @@ export default function ShopPage() {
                 Where to Buy
               </p>
 
+              {/* Amazon — primary CTA */}
+              <a
+                href={AMAZON_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary block text-center w-full"
+                aria-label="Buy on Amazon"
+              >
+                Buy on Amazon
+              </a>
+
               <a
                 href="https://shop.ingramspark.com/b/084?params=kBRanDfjtJKc122qtFtur05F8OXdx9W6V9fExyG0QHw"
-                className="btn-primary block text-center w-full"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline block text-center w-full"
                 aria-label="Buy direct from the author"
               >
                 Buy Direct from Author
               </a>
 
               <a
-                href="https://www.barnesandnoble.com/w/i-see-you-i-see-me-heather-krystecki/1149164117"
+                href={BN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline"
+                className="btn-outline block text-center w-full"
               >
                 Buy on Barnes &amp; Noble
               </a>
@@ -197,6 +228,13 @@ export default function ShopPage() {
             <div className="grid md:grid-cols-3 gap-12">
               {praise.map((item, i) => (
                 <div key={i} className="space-y-6">
+                  <div className="flex justify-center gap-1 mb-2" aria-hidden="true">
+                    {[...Array(5)].map((_, j) => (
+                      <svg key={j} className="w-3 h-3 text-blush fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
                   <blockquote className="font-serif text-lg text-charcoal font-light italic leading-relaxed">
                     &ldquo;{item.quote}&rdquo;
                   </blockquote>
@@ -221,7 +259,7 @@ export default function ShopPage() {
               Available Worldwide
             </h2>
             <p className="text-base text-stone leading-relaxed mb-16 max-w-prose-narrow mx-auto">
-              Distributed through IngramSpark&apos;s global network, <em className="font-serif italic">I See You, I See Me</em> can
+              Distributed through IngramSpark&apos;s global network and available on Amazon, <em className="font-serif italic">I See You, I See Me</em> can
               be ordered from bookstores and online retailers across the globe.
             </p>
 
@@ -284,7 +322,7 @@ export default function ShopPage() {
       </section>
 
       {/* Featured Poem */}
-      <section className="py-30 md:py-40 px-8">
+      <section className="py-30 md:py-40 px-8 bg-linen">
         <ScrollReveal>
           <div className="max-w-prose-narrow mx-auto text-center">
             <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-12">
@@ -299,13 +337,26 @@ export default function ShopPage() {
               <br />
               some days that&apos;s enough
             </blockquote>
-            <div className="divider mx-auto mt-12" />
+            <div className="divider mx-auto mt-12 mb-10" />
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href={AMAZON_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                Order on Amazon
+              </a>
+              <Link href="/poems" className="btn-secondary">
+                Read More Poems
+              </Link>
+            </div>
           </div>
         </ScrollReveal>
       </section>
 
       {/* Who is this book for */}
-      <section className="py-30 md:py-40 px-8 bg-linen">
+      <section className="py-30 md:py-40 px-8">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-12">
@@ -342,7 +393,7 @@ export default function ShopPage() {
       </section>
 
       {/* Gift Section */}
-      <section className="py-26 md:py-30 px-8 text-center">
+      <section className="py-26 md:py-30 px-8 bg-linen text-center">
         <ScrollReveal>
           <div className="max-w-prose-narrow mx-auto">
             <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-8">
@@ -356,31 +407,43 @@ export default function ShopPage() {
               going through it. For the person who feels everything deeply.
               This book was written for them.
             </p>
-            <a
-              href="https://shop.ingramspark.com/b/084?params=kBRanDfjtJKc122qtFtur05F8OXdx9W6V9fExyG0QHw"
-              className="btn-primary"
-            >
-              Order as a Gift
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href={AMAZON_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                Gift on Amazon
+              </a>
+              <a
+                href="https://shop.ingramspark.com/b/084?params=kBRanDfjtJKc122qtFtur05F8OXdx9W6V9fExyG0QHw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline"
+              >
+                Gift Direct
+              </a>
+            </div>
           </div>
         </ScrollReveal>
       </section>
 
       {/* Book Club CTA */}
-      <section className="py-20 px-8 bg-linen text-center">
+      <section className="py-20 px-8 bg-charcoal text-cream text-center">
         <ScrollReveal>
           <div className="max-w-prose-narrow mx-auto">
-            <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-6">
+            <p className="text-[10px] tracking-super-wide uppercase text-cream/30 mb-6">
               For Reading Groups
             </p>
-            <h2 className="font-serif text-2xl text-charcoal font-light mb-4">
+            <h2 className="font-serif text-2xl font-light mb-4">
               Reading with a group?
             </h2>
-            <p className="text-sm text-stone leading-relaxed mb-8">
+            <p className="text-sm text-cream/60 leading-relaxed mb-8">
               Download the free discussion guide with 12 conversation starters
               for your book club, reading group, or classroom.
             </p>
-            <Link href="/book-club" className="btn-secondary">
+            <Link href="/book-club" className="inline-block py-3 px-10 text-[11px] tracking-super-wide uppercase border border-cream/30 text-cream hover:bg-cream hover:text-charcoal transition-all duration-400">
               Book Club Guide
             </Link>
           </div>
@@ -388,22 +451,32 @@ export default function ShopPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-26 px-8 bg-charcoal text-cream text-center">
+      <section className="py-26 px-8 text-center">
         <div className="max-w-prose-narrow mx-auto">
-          <p className="font-serif text-display-sm font-light mb-4">
+          <p className="font-serif text-display-sm text-charcoal font-light mb-4">
             Begin the journey
           </p>
-          <p className="text-sm text-cream/50 mb-10">
-            Available worldwide on Barnes &amp; Noble and direct from the author
+          <p className="text-sm text-stone/50 mb-10">
+            Available on Amazon, Barnes &amp; Noble, and direct from the author
           </p>
-          <a
-            href="https://www.barnesandnoble.com/w/i-see-you-i-see-me-heather-krystecki/1149164117"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block py-4 px-12 text-[11px] tracking-super-wide uppercase border border-cream/30 text-cream hover:bg-cream hover:text-charcoal transition-all duration-400"
-          >
-            Order Your Copy
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={AMAZON_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Buy on Amazon
+            </a>
+            <a
+              href={BN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline"
+            >
+              Barnes &amp; Noble
+            </a>
+          </div>
         </div>
       </section>
     </article>

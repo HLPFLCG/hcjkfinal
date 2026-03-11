@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { AMAZON_URL } from "@/lib/metadata"
 
 export default function Footer() {
   return (
@@ -60,6 +61,14 @@ export default function Footer() {
                 className="text-sm text-cream/60 hover:text-cream transition-colors duration-300"
               >
                 heather@hcjk.org
+              </a>
+              <a
+                href={AMAZON_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-cream/60 hover:text-cream transition-colors duration-300"
+              >
+                Amazon
               </a>
               <a
                 href="https://www.barnesandnoble.com/w/i-see-you-i-see-me-heather-krystecki/1149164117"

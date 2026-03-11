@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { InstagramEmbed } from "@/components/instagram-embed"
 import { NewsletterSignup } from "@/components/newsletter-signup"
 import { ScrollReveal } from "@/components/scroll-reveal"
+import { AMAZON_URL } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: 'Heather Krystecki — Poetry About Mental Health, Addiction & Recovery',
@@ -163,17 +164,25 @@ export default function Home() {
                 I hope this collection shows others that they aren&apos;t alone.
                 I see you and I believe in you.
               </p>
-              <div className="flex flex-col sm:flex-row items-start gap-4">
-                <Link
-                  href="/shop"
+              <div className="flex flex-col sm:flex-row items-start gap-4 flex-wrap">
+                <a
+                  href={AMAZON_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block py-4 px-12 text-[11px] tracking-super-wide uppercase border border-cream/30 text-cream hover:bg-cream hover:text-charcoal transition-all duration-400"
                 >
-                  Get Your Copy
+                  Buy on Amazon
+                </a>
+                <Link
+                  href="/shop"
+                  className="inline-block py-4 px-8 text-[11px] tracking-super-wide uppercase border border-cream/10 text-cream/60 hover:border-cream/30 hover:text-cream transition-all duration-400"
+                >
+                  All Options
                 </Link>
-                <span className="text-[10px] tracking-wide text-cream/30 self-center">
-                  Barnes &amp; Noble &middot; Direct
-                </span>
               </div>
+              <p className="text-[10px] tracking-wide text-cream/30 mt-2">
+                Also on Barnes &amp; Noble &middot; Direct from Author
+              </p>
             </div>
           </ScrollReveal>
         </div>
@@ -374,9 +383,19 @@ export default function Home() {
               I see you and I believe in you.
             </p>
             <div className="divider mx-auto mb-10" />
-            <Link href="/shop" className="btn-secondary">
-              Order Now
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href={AMAZON_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                Order on Amazon
+              </a>
+              <Link href="/shop" className="btn-secondary">
+                All Purchase Options
+              </Link>
+            </div>
           </div>
         </ScrollReveal>
       </section>

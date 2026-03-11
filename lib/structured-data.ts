@@ -5,6 +5,7 @@ import {
   INSTAGRAM_URL,
   EMAIL,
   BN_URL,
+  AMAZON_URL,
   ISBN,
 } from './metadata'
 
@@ -36,11 +37,20 @@ export function getBookSchema() {
     bookFormat: 'https://schema.org/Paperback',
     genre: ['Poetry', 'Mental Health', 'Addiction & Recovery'],
     url: `${SITE_URL}/shop/`,
-    offers: {
-      '@type': 'Offer',
-      availability: 'https://schema.org/InStock',
-      url: BN_URL,
-    },
+    offers: [
+      {
+        '@type': 'Offer',
+        availability: 'https://schema.org/InStock',
+        url: AMAZON_URL,
+        seller: { '@type': 'Organization', name: 'Amazon' },
+      },
+      {
+        '@type': 'Offer',
+        availability: 'https://schema.org/InStock',
+        url: BN_URL,
+        seller: { '@type': 'Organization', name: 'Barnes & Noble' },
+      },
+    ],
     description:
       'A poetry collection about mental health crises, addiction, and recovery. The darkest parts of the journey and the fight to come back.',
   }
