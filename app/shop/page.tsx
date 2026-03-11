@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Shop — I See You, I See Me by Heather Krystecki',
     description: 'A raw, honest poetry collection about mental health, addiction, and the journey back to yourself. Order on Amazon, Barnes & Noble, or direct.',
-    images: [{ url: 'https://hcjk.org/images/Image.jpeg', width: 400, height: 600, alt: 'I See You, I See Me — book cover' }],
+    images: [{ url: 'https://hcjk.org/images/front-cover.webp', width: 667, height: 1000, alt: 'I See You, I See Me — book cover' }],
   },
 }
 
@@ -63,11 +63,13 @@ export default function ShopPage() {
               <div className="relative">
                 <div className="absolute -bottom-6 left-6 right-6 h-12 bg-charcoal/10 blur-2xl" />
                 <img
-                  src="/images/Image.jpeg"
+                  src="/images/front-cover.webp"
                   alt="I See You, I See Me by Heather Krystecki — front cover featuring butterfly with lips artwork"
                   className="w-72 md:w-80 shadow-xl book-cover-hover"
                   width={320}
                   height={480}
+                  fetchPriority="high"
+                  decoding="async"
                 />
               </div>
             </ScrollReveal>
@@ -76,11 +78,13 @@ export default function ShopPage() {
               <div className="relative">
                 <div className="absolute -bottom-6 left-6 right-6 h-12 bg-charcoal/10 blur-2xl" />
                 <img
-                  src="/images/Image 1.jpeg"
+                  src="/images/back-cover.webp"
                   alt="I See You, I See Me — back cover with poem about the mental health journey"
                   className="w-72 md:w-80 shadow-xl book-cover-hover"
                   width={320}
                   height={480}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </ScrollReveal>

@@ -67,10 +67,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Load fonts asynchronously — eliminates render-blocking */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap"
-          rel="stylesheet"
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap"
+          as="style"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap"
+          rel="stylesheet"
+          media="print"
+          // @ts-expect-error onLoad used for async font loading pattern
+          onLoad="this.media='all'"
+        />
+        <noscript>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap"
+            rel="stylesheet"
+          />
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(getPersonSchema()) }}
@@ -106,19 +121,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <BackToTop />
 
-        {/* Inline script to hide loading screen once page is ready */}
+        {/* Inline script to hide loading screen once DOM is ready */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.addEventListener('load', function() {
-                var loader = document.getElementById('loading-screen');
-                if (loader) {
-                  setTimeout(function() {
-                    loader.classList.add('loaded');
-                    setTimeout(function() { loader.style.display = 'none'; }, 600);
-                  }, 400);
+              (function() {
+                function hideLoader() {
+                  var loader = document.getElementById('loading-screen');
+                  if (loader) {
+                    setTimeout(function() {
+                      loader.classList.add('loaded');
+                      setTimeout(function() { loader.style.display = 'none'; }, 600);
+                    }, 300);
+                  }
                 }
-              });
+                if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', hideLoader);
+                } else {
+                  hideLoader();
+                }
+              })();
             `,
           }}
         />

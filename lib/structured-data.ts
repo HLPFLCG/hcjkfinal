@@ -33,7 +33,7 @@ export function getBookSchema() {
       name: AUTHOR_NAME,
     },
     isbn: ISBN,
-    image: `${SITE_URL}/images/book-cover-front.jpg`,
+    image: `${SITE_URL}/images/front-cover.webp`,
     bookFormat: 'https://schema.org/Paperback',
     genre: ['Poetry', 'Mental Health', 'Addiction & Recovery'],
     url: `${SITE_URL}/shop/`,
