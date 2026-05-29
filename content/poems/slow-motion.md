@@ -5,13 +5,10 @@ order: 5
 featured: false
 ---
 
-everything moved
-in slow motion
-the day i decided
-to come back
-to myself —
-
-the world didn't stop
-but i did
-and that was
-the beginning
+I'm standing in a room full of people
+  Moving past me while
+I'm in slow motion
+Putting a smile on my face
+No one knows what's hidden inside
+Locked away until I'm home
+Alone
