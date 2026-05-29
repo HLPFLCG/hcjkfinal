@@ -5,7 +5,11 @@ order: 1
 featured: true
 ---
 
-baby steps?!
-one foot forward
-then the other —
-some days that's enough
+Baby steps
+  Every Day is a small win
+Celebrate the wins
+No matter now small
+Instead of feeling the shame
+The guilt
+Of being unproductive
+And not who you were before
