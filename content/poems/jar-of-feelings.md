@@ -5,12 +5,10 @@ order: 4
 featured: false
 ---
 
-i kept my feelings
-in a jar
-on the top shelf —
-told myself
-i'd deal with them later
-
-later never came
-so the jar just
-kept filling
+I stuff my feelings in a jar
+  Until it's too full
+And the lid bursts off
+Once that happens
+It overflows into my body and mind
+Until I stuff them into a bigger jar
+Or face them in order to set them free
